@@ -1,6 +1,0 @@
-Hello,
-
-## Just for you information:
-### The project takes a single argument to run: the absolute path of the input file
-Example:
-* For Intellij, it can be added as ProgramArguments in "C:\Temp\mow-it.txt"

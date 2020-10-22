@@ -37,12 +37,23 @@ public class MowerService {
 
     public void move(Grass grass, Mower mower, String... actions) {
         for (String rawAction : actions) {
-            Action action = Action.fromValue(rawAction);
-            switch (action) {
-                case TURN_RIGHT: turnRight(mower); break;
-                case TURN_LEFT: turnLeft(mower); break;
-                case GO: go(grass, mower); break;
-                default: break;
+            try {
+                Action action = Action.fromValue(rawAction);
+                switch (action) {
+                    case TURN_RIGHT:
+                        turnRight(mower);
+                        break;
+                    case TURN_LEFT:
+                        turnLeft(mower);
+                        break;
+                    case GO:
+                        go(grass, mower);
+                        break;
+                    default:
+                        break;
+                }
+            } catch (Exception e) {
+                log.severe("Unable to move mower: -" + e.getMessage());
             }
         }
     }

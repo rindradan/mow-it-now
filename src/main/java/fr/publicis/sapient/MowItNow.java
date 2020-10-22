@@ -32,9 +32,7 @@ public class MowItNow {
                     mowerService.move(grass, mower, actions);
                     // log.info(mower.toString());
                     System.out.println(mower);
-                } catch (Exception e) {
-                    log.severe("Move failed: " + e.getMessage());
-                }
+                } catch (Exception ignored) {}
                 i += 2;
             }
 
